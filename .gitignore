@@ -1,0 +1,4 @@
+.*.*
+tmp
+phpunit.xml
+vendor
