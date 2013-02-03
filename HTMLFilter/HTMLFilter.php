@@ -55,7 +55,7 @@ class HTMLFilter
         \DOMNode $source,
         \DOMNode $destination
     ) {
-        if ($source->childNodes === null) {
+        if (!$source->hasChildNodes()) {
             return;
         }
 
