@@ -30,3 +30,22 @@ Output:
         Consectetur <a href="http://example.com" title="hey!">adipiscing</a>
         <a>elit</a>.
     </p>
+
+Installation
+------------
+
+Installation is possible via [Composer][composer]. Create a file named
+`composer.json` in your project directory with the following contents:
+
+  [composer]: http://getcomposer.org/
+
+    {
+        "require": {
+            "athoshun/html-filter": "1.0.*"
+        }
+    }
+
+Then as a normal user, issue the following commands:
+
+    $ curl http://getcomposer.org/installer | php
+    $ php composer.phar install
