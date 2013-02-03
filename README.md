@@ -19,7 +19,7 @@ $filter = new HTMLFilter\HTMLFilter();
 $html = <<<HTML
 Lorem ipsum <em>dolor</em> sit amet
 <p>
-    Consectetur <a href="http://example.com" title="hey!">adipiscing</a>
+    Consectetur <a href="http://example.com" title="hey!">adipisicing</a>
     <a href="javascript:alert(42)" onclick="alert(42)">elit</a>.
 </p>
 HTML;
@@ -32,7 +32,7 @@ Output:
 ```html
 Lorem ipsum dolor sit amet
 <p>
-    Consectetur <a href="http://example.com" title="hey!">adipiscing</a>
+    Consectetur <a href="http://example.com" title="hey!">adipisicing</a>
     <a>elit</a>.
 </p>
 ```
