@@ -1,7 +1,7 @@
 HTMLFilter
 ==========
 
-Remove tags or attributes based on a whitelist from a snippet of
+Remove tags or attributes based on a whitelist from a snippet of somewhat
 well-formatted HTML text using PHP's DOM library.
 
 Example:

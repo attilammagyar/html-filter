@@ -16,11 +16,15 @@ class HTMLFilter
     {
         $this->config = $config;
 
+        $previous_libxml_error_handling = libxml_use_internal_errors(true);
+
         $this->original_dom = $this->createDOMDocument($html_text);
         $this->filterd_dom = $this->createDOMDocument("");
         $this->copyAllowedNodes();
 
         $this->config = null;
+
+        libxml_use_internal_errors($previous_libxml_error_handling);
 
         return $this->fetchFilteredHTML();
     }
@@ -28,7 +32,7 @@ class HTMLFilter
     private function createDOMDocument($html_text)
     {
         $dom_document = new \DOMDocument("1.0", "UTF-8");
-        $dom_document->loadXML("<html><body>$html_text</body></html>");
+        $dom_document->loadHTML("<html><body>$html_text</body></html>");
 
         return $dom_document;
     }
@@ -42,9 +46,7 @@ class HTMLFilter
 
     private function findBodyNode(\DOMDocument $dom_document)
     {
-        $html_node = $dom_document->childNodes->item(0);
-
-        return $html_node->firstChild;
+        return $dom_document->getElementsByTagName("body")->item(0);
     }
 
     private function copyAllowedChildNodes(

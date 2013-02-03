@@ -84,11 +84,13 @@ class HTMLFilterTest extends \PHPUnit_Framework_TestCase
 
     public function testNodesAreCopiedRecursively()
     {
-        $this->filter_config->allowAttribute("a", "href", "/^hello\$/");
+        $this->filter_config->allowTag("p")
+                            ->allowTag("b")
+                            ->allowAttribute("a", "href", "/^hello\$/");
 
         $this->assertFilteredHTML(
-            "Lorem <a><a><a>ipsum</a> dolor sit</a> amet</a>",
-            "Lorem <a><a><a>ipsum</a> <em>dolor</em> <em>sit</em></a> amet</a>"
+            "Lorem <p><b><a>ipsum</a> dolor sit</b> amet</p>",
+            "Lorem <p><b><a>ipsum</a> <em>dolor</em> <em>sit</em></b> amet</p>"
         );
     }
 
@@ -97,5 +99,13 @@ class HTMLFilterTest extends \PHPUnit_Framework_TestCase
         $html = "Lorem <!-- <Hello> --> Ipsum";
 
         $this->assertFilteredHTML($html, $html);
+    }
+
+    public function testInvalidMarkupIsIgnored()
+    {
+        $this->assertFilteredHTML(
+            "hello world",
+            "<nosuchtag>hello world</x></nosuchtag>"
+        );
     }
 }
