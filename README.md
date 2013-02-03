@@ -6,12 +6,12 @@ well-formatted HTML text using PHP's DOM library.
 
 Example:
 
-    $config = new HTMLFilterConfiguration();
+    $config = new HTMLFilter\HTMLFilterConfiguration();
     $config->allowTag("p")
            ->allowAttribute("a", "title")
            ->allowAttribute("a", "href", "|^https?://.*\$|");
 
-    $filter = new HTMLFilter();
+    $filter = new HTMLFilter\HTMLFilter();
 
     $html = <<<HTML
     Lorem ipsum <em>dolor</em> sit amet
