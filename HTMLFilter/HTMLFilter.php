@@ -7,6 +7,7 @@ class HTMLFilter
     private $config;
     private $original_dom;
     private $filterd_dom;
+    private $libxml_used_internal_errors;
 
     public function __construct()
     {
@@ -14,19 +15,20 @@ class HTMLFilter
 
     public function filter(HTMLFilterConfiguration $config, $html_text)
     {
+        $this->initialize($config, $html_text);
+        $this->copyAllowedNodes();
+        $filtered_html = $this->fetchFilteredHTML();
+        $this->cleanup();
+
+        return $filtered_html;
+    }
+
+    private function initialize(HTMLFilterConfiguration $config, $html_text)
+    {
+        $this->libxml_used_internal_errors = libxml_use_internal_errors(true);
         $this->config = $config;
-
-        $previous_libxml_error_handling = libxml_use_internal_errors(true);
-
         $this->original_dom = $this->createDOMDocument($html_text);
         $this->filterd_dom = $this->createDOMDocument("");
-        $this->copyAllowedNodes();
-
-        $this->config = null;
-
-        libxml_use_internal_errors($previous_libxml_error_handling);
-
-        return $this->fetchFilteredHTML();
     }
 
     private function createDOMDocument($html_text)
@@ -171,5 +173,13 @@ class HTMLFilter
         }
 
         return $html_text;
+    }
+
+    private function cleanup()
+    {
+        $this->config = null;
+        $this->original_dom = null;
+        $this->filterd_dom = null;
+        libxml_use_internal_errors($this->libxml_used_internal_errors);
     }
 }
