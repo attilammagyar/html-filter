@@ -2,7 +2,7 @@
 
 namespace HTMLFilter;
 
-class HTMLFilterConfiguration
+class Configuration
 {
     private $allowed_tags_with_attributes;
 

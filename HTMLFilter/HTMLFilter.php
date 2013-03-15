@@ -13,7 +13,7 @@ class HTMLFilter
     {
     }
 
-    public function filter(HTMLFilterConfiguration $config, $html_text)
+    public function filter(Configuration $config, $html_text)
     {
         $this->initialize($config, $html_text);
         $this->copyAllowedNodes();
@@ -23,7 +23,7 @@ class HTMLFilter
         return $filtered_html;
     }
 
-    private function initialize(HTMLFilterConfiguration $config, $html_text)
+    private function initialize(Configuration $config, $html_text)
     {
         $this->libxml_used_internal_errors = libxml_use_internal_errors(true);
         $this->config = $config;

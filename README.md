@@ -9,7 +9,7 @@ Example:
 ```php
 <?php
 
-$config = new HTMLFilter\HTMLFilterConfiguration();
+$config = new HTMLFilter\Configuration();
 $config->allowTag("p")
        ->allowAttribute("a", "title")
        ->allowAttribute("a", "href", "|^https?://.*\$|");

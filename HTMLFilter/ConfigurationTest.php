@@ -2,13 +2,13 @@
 
 namespace HTMLFilter;
 
-class HTMLFilterConfigurationTest extends \PHPUnit_Framework_TestCase
+class ConfigurationTest extends \PHPUnit_Framework_TestCase
 {
     private $filter_config;
 
     public function setUp()
     {
-        $this->filter_config = new HTMLFilterConfiguration();
+        $this->filter_config = new Configuration();
     }
 
     public function testTagsCanBeAllowedOrDisallowed()

@@ -9,7 +9,7 @@ class HTMLFilterTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->filter_config = new HTMLFilterConfiguration();
+        $this->filter_config = new Configuration();
         $this->filter = new HTMLFilter();
     }
 
