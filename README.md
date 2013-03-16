@@ -9,12 +9,12 @@ Example:
 ```php
 <?php
 
-$config = new HTMLFilter\Configuration();
+$config = new AthosHun\HTMLFilter\Configuration();
 $config->allowTag("p")
        ->allowAttribute("a", "title")
        ->allowAttribute("a", "href", "|^https?://.*\$|");
 
-$filter = new HTMLFilter\HTMLFilter();
+$filter = new AthosHun\HTMLFilter\HTMLFilter();
 
 $html = <<<HTML
 Lorem ipsum <em>dolor</em> sit amet

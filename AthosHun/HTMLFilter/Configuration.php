@@ -1,6 +1,6 @@
 <?php
 
-namespace HTMLFilter;
+namespace AthosHun\HTMLFilter;
 
 class Configuration
 {

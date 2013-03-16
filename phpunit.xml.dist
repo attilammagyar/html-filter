@@ -8,8 +8,8 @@
          syntaxCheck="false"
          bootstrap="./vendor/autoload.php">
     <testsuites>
-        <testsuite name="HTMLFilter">
-            <directory>HTMLFilter</directory>
+        <testsuite name="AthosHun_HTMLFilter">
+            <directory>AthosHun/HTMLFilter</directory>
         </testsuite>
     </testsuites>
 </phpunit>
