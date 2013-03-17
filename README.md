@@ -47,7 +47,7 @@ Installation is possible via [Composer][composer]. Create a file named
 
     {
         "require": {
-            "athoshun/html-filter": "1.0.*"
+            "athoshun/html-filter": "2.0.*"
         }
     }
 
