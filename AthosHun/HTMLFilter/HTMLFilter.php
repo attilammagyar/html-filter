@@ -6,7 +6,7 @@ class HTMLFilter
 {
     private $config;
     private $original_dom;
-    private $filterd_dom;
+    private $filtered_dom;
     private $libxml_used_internal_errors;
 
     public function __construct()
@@ -28,7 +28,7 @@ class HTMLFilter
         $this->libxml_used_internal_errors = libxml_use_internal_errors(true);
         $this->config = $config;
         $this->original_dom = $this->createDOMDocument($html_text);
-        $this->filterd_dom = $this->createDOMDocument("");
+        $this->filtered_dom = $this->createDOMDocument("");
     }
 
     private function createDOMDocument($html_text)
@@ -42,8 +42,8 @@ class HTMLFilter
     private function copyAllowedNodes()
     {
         $original_body = $this->findBodyNode($this->original_dom);
-        $filterd_body = $this->findBodyNode($this->filterd_dom);
-        $this->copyAllowedChildNodes($original_body, $filterd_body);
+        $filtered_body = $this->findBodyNode($this->filtered_dom);
+        $this->copyAllowedChildNodes($original_body, $filtered_body);
     }
 
     private function findBodyNode(\DOMDocument $dom_document)
@@ -151,11 +151,11 @@ class HTMLFilter
 
     private function fetchFilteredHTML()
     {
-        $filterd_html = $this->filterd_dom->saveXML(
-            $this->findBodyNode($this->filterd_dom)
+        $filtered_html = $this->filtered_dom->saveXML(
+            $this->findBodyNode($this->filtered_dom)
         );
 
-        return $this->trimBodyTags($filterd_html);
+        return $this->trimBodyTags($filtered_html);
     }
 
     private function trimBodyTags($html_text)
@@ -179,7 +179,7 @@ class HTMLFilter
     {
         $this->config = null;
         $this->original_dom = null;
-        $this->filterd_dom = null;
+        $this->filtered_dom = null;
         libxml_use_internal_errors($this->libxml_used_internal_errors);
     }
 }
