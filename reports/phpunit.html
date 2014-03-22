@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <h2 id="AthosHun\HTMLFilter\ConfigurationTest">
+      AthosHun\HTMLFilter\Configuration
+    </h2>
+    <ul>
+      <li>Tags can be allowed or disallowed
+      </li>
+      <li>Attributes can be restricted with regular expression
+      </li>
+      <li>Allowed attribute implies allowed tag
+      </li>
+      <li>Allowing an already allowed tag keeps attribute restrictions
+      </li>
+      <li>Multiple tags can be allowed
+      </li>
+      <li>Multiple attributes can be allowed
+      </li>
+    </ul>
+    <h2 id="AthosHun\HTMLFilter\HTMLFilterTest">
+      AthosHun\HTMLFilter\HTMLFilter
+    </h2>
+    <ul>
+      <li>Plain text without any html remains unchanged
+      </li>
+      <li>Disallowed tags are removed
+      </li>
+      <li>Allowed tags are kept
+      </li>
+      <li>Disallowed attributes are removed
+      </li>
+      <li>Allowed attributes are kept
+      </li>
+      <li>Allowed attributes not matching a regexp are removed
+      </li>
+      <li>H t m l entities are left unchanged
+      </li>
+      <li>Nodes are copied recursively
+      </li>
+      <li>Html comments are preserved
+      </li>
+      <li>Invalid markup is ignored
+      </li>
+    </ul>
+  </body>
+</html>

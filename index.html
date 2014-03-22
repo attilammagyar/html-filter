@@ -1,12 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hello World!</title>
+    <title>AthosHun\HTMLFilter Build Sat Mar 22 13:51:55 UTC 2014</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="description" content="Hello World!" />
+    <meta name="description" content="AthosHun\HTMLFilter Build - Sat Mar 22 13:51:55 UTC 2014" />
+    <style type="text/css">
+    <!--
+    html, body {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    * {
+      font-family: Verdana, Geneva, sans-serif;
+    }
+    a {
+      color: #000070;
+    }
+    div.column {
+      float: left;
+      width: 50%;
+    }
+    div.last {
+      clear: right;
+    }
+    img {
+      width: 100%;
+      background-color: #f0f0f0;
+    }
+    pre {
+      font-family: Monaco, "Liberation Mono", "Lucida Console", monospace;
+      font-size: 1em;
+      margin: 10px;
+      padding: 7px;
+      min-width: 80%;
+      background-color: #e0e0e0;
+      color: #000000;
+    }
+    -->
+    </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1>AthosHun\HTMLFilter Build</h1>
+    <p>Generated: Sat Mar 22 13:51:55 UTC 2014</p>
+    <h2>Table of contents</h2>
+    <ul>
+      <li><p><a href="#readme">README</a></p></li>
+      <li><p><a href="#phpunit">PHPUnit Coverage</a></p></li>
+      <li><p><a href="#more">More build artifacts</a></p></li>
+    </ul>
+    <h2 id="readme">README</h2>
+    <pre>HTMLFilter
+==========
+
+Remove tags or attributes based on a whitelist from a snippet of somewhat
+well-formatted HTML text using PHP&#039;s DOM library.
+
+Example:
+
+```php
+&lt;?php
+
+$config = new AthosHun\HTMLFilter\Configuration();
+$config-&gt;allowTag(&quot;p&quot;)
+       -&gt;allowAttribute(&quot;a&quot;, &quot;title&quot;)
+       -&gt;allowAttribute(&quot;a&quot;, &quot;href&quot;, &quot;|^https?://.*\$|&quot;);
+
+$filter = new AthosHun\HTMLFilter\HTMLFilter();
+
+$html = &lt;&lt;&lt;HTML
+Lorem ipsum &lt;em&gt;dolor&lt;/em&gt; sit amet
+&lt;p&gt;
+    Consectetur &lt;a href=&quot;http://example.com&quot; title=&quot;hey!&quot;&gt;adipisicing&lt;/a&gt;
+    &lt;a href=&quot;javascript:alert(42)&quot; onclick=&quot;alert(42)&quot;&gt;elit&lt;/a&gt;.
+&lt;/p&gt;
+HTML;
+
+print $filter-&gt;filter($config, $html);
+```
+
+Output:
+
+```html
+Lorem ipsum dolor sit amet
+&lt;p&gt;
+    Consectetur &lt;a href=&quot;http://example.com&quot; title=&quot;hey!&quot;&gt;adipisicing&lt;/a&gt;
+    &lt;a&gt;elit&lt;/a&gt;.
+&lt;/p&gt;
+```
+
+Installation
+------------
+
+Installation is possible via [Composer][composer]. Create a file named
+`composer.json` in your project directory with the following contents:
+
+  [composer]: http://getcomposer.org/
+
+    {
+        &quot;require&quot;: {
+            &quot;athoshun/html-filter&quot;: &quot;2.0.*&quot;
+        }
+    }
+
+Then as a normal user, issue the following commands:
+
+    $ curl http://getcomposer.org/installer | php
+    $ php composer.phar install</pre>
+    <h2 id="phpunit">PHPUnit Coverage</h2>
+    <pre>PHPUnit 3.7.32 by Sebastian Bergmann.
+
+Configuration read from /home/travis/build/attilammagyar/html-filter/phpunit.xml
+
+................
+
+Time: 55 ms, Memory: 6.50Mb
+
+OK (16 tests, 28 assertions)
+
+Generating code coverage report in Clover XML format ... done
+
+Generating code coverage report in HTML format ... done
+
+
+Code Coverage Report 
+  2014-03-22 13:51:54
+
+ Summary: 
+  Classes: 100.00% (4/4)
+  Methods: 100.00% (46/46)
+  Lines:   100.00% (220/220)</pre>
+    <h2 id="more">More build artifacts</h2>
+    <ul>
+      <li><p><a href="api/html/index.html">API documentation (HTML)</a></p></li>
+      <li>
+        <h3>PHPUnit</h3>
+        <ul>
+          <li><p><a href="reports/phpunit.html">Testdox (HTML)</a></p></li>
+          <li><p><a href="reports/phpunit_coverage/index.dashboard.html">Dashboard (HTML)</a></p></li>
+          <li><p><a href="reports/phpunit_coverage/index.html">Coverage report (HTML) </a></p></li>
+          <li><p><a href="reports/phpunit_clover.xml">Clover (XML)</a></p></li>
+        </ul>
+      </li>
+    </ul>
   </body>
 </html>
