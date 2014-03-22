@@ -1,7 +1,10 @@
 HTMLFilter
 ==========
 
-[![Build Status](https://travis-ci.org/attilammagyar/html-filter.svg)](https://travis-ci.org/attilammagyar/html-filter)
+[![Build
+Status](https://travis-ci.org/attilammagyar/html-filter.svg)](https://travis-ci.org/attilammagyar/html-filter) [Latest build report][latestbuild]
+
+  [latestbuild]: http://attilammagyar.github.io/html-filter/
 
 Remove tags or attributes based on a whitelist from a snippet of somewhat
 well-formatted HTML text using PHP's DOM library.
