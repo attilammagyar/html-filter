@@ -1,4 +1,6 @@
-.*.*
+.*.swp
 tmp
 phpunit.xml
+composer.lock
 vendor
+docs

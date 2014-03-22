@@ -12,4 +12,9 @@
             <directory>AthosHun/HTMLFilter</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhiteList="true">
+            <directory suffix=".php">AthosHun/HTMLFilter</directory>
+        </whitelist>
+    </filter>
 </phpunit>
