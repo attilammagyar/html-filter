@@ -1,6 +1,8 @@
 HTMLFilter
 ==========
 
+[![Build Status](https://travis-ci.org/attilammagyar/html-filter.svg)](https://travis-ci.org/attilammagyar/html-filter)
+
 Remove tags or attributes based on a whitelist from a snippet of somewhat
 well-formatted HTML text using PHP's DOM library.
 
