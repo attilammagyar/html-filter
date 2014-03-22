@@ -4,7 +4,7 @@ Configuration read from /home/travis/build/attilammagyar/html-filter/phpunit.xml
 
 ................
 
-Time: 69 ms, Memory: 6.50Mb
+Time: 65 ms, Memory: 6.50Mb
 
 OK (16 tests, 28 assertions)
 
@@ -14,7 +14,7 @@ Generating code coverage report in HTML format ... done
 
 
 Code Coverage Report 
-  2014-03-22 14:56:29
+  2014-03-22 14:57:05
 
  Summary: 
   Classes: 100.00% (4/4)
