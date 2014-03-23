@@ -9,4 +9,4 @@ script: GHTOKEN= make all
 after_success: build/travis-publish.sh
 env:
     global:
-        secure: UdYsllMQKFcn8XumDyPYeKzdkgW2ffcOUxrqUalmuM5nHjw2gQyMiZa4RIqkvVa6XZ5z3y/O7ypc1iy1T7YmJcKuvjf1l/ZeQZpIpctPKJYeWPE884J1ba4x/osapb6RILzxXDkY04A39xX0JPZDjvDvfMC8aRgxeDVC9TLyX3A=
+        secure: "clhWnnHTsGgpaUBAkAz8Rf/b2Qd70EO49vfA4RbX6ySEb78GqKayrEFEi1bIxWMhmahbPr8UZcZDLw2svbLq63OLlHVoVwRGhADzKku5SUTrouA8Qnynb8SJ61821CR27arHGEgxhR2b0dKpBCWrFnsNfmyrDRJol/0/nt089Co="
