@@ -1,6 +1,9 @@
 language: php
 php:
     - "5.3"
+branches:
+    only:
+        - master
 before_script: GHTOKEN= sudo apt-get install doxygen graphviz make
 script: GHTOKEN= make all
 after_success: build/travis-publish.sh
