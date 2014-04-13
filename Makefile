@@ -1,5 +1,4 @@
 COMPOSER = $(shell which composer)
-DOXYGEN = $(shell which doxygen)
 
 DOCS_DIR ?= docs
 REPORTS_DIR = $(DOCS_DIR)/reports
@@ -39,4 +38,4 @@ coverage: bootstrap phpunitconfig
 
 .PHONY: docs
 docs: bootstrap
-	$(DOXYGEN) Doxyfile
+	php ./vendor/bin/sami.php update ./sami.config.php

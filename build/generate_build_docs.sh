@@ -72,7 +72,7 @@ cat <<HTML
     <pre>`cat_html docs/reports/phpunit_coverage.txt`</pre>
     <h2 id="more">More build artifacts</h2>
     <ul>
-      <li><p><a href="api/html/index.html">API documentation (HTML)</a></p></li>
+      <li><p><a href="api/index.html">API documentation (HTML)</a></p></li>
       <li>
         <h3>PHPUnit</h3>
         <ul>
