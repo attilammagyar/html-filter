@@ -35,5 +35,9 @@ cd "$HOME"/gh-pages/
 git add -f . >/dev/null 2>/dev/null
 git commit -m "Publishing build report: '$TRAVIS_BUILD_NUMBER'" >/dev/null 2>/dev/null
 git push -fq origin gh-pages >/dev/null 2>/dev/null
+git remote rm origin
+
+cd
+rm -rf "$HOME"/gh-pages
 
 echo "Finished publishing build report."
