@@ -4,7 +4,6 @@ php:
 branches:
     only:
         - master
-before_script: GHTOKEN= sudo apt-get install make
 script: GHTOKEN= make all
 after_success: build/travis-publish.sh
 env:
