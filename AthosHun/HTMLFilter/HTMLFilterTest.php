@@ -108,4 +108,16 @@ class HTMLFilterTest extends \PHPUnit_Framework_TestCase
             "<nosuchtag>hello world</x></nosuchtag>"
         );
     }
+
+    public function testWorksWithCjkCharacters()
+    {
+        $zh = "格萊美紅毯大戰誰是贏家";
+        $jp = "日本語です。";
+        $ko = "빛나리의 타잔 주제가";
+
+        $this->assertFilteredHTML(
+            "$zh$jp$ko",
+            "<p>$zh</p><p>$jp</p><p>$ko</p>"
+        );
+    }
 }

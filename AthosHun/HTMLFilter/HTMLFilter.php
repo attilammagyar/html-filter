@@ -34,7 +34,9 @@ class HTMLFilter
     private function createDOMDocument($html_text)
     {
         $dom_document = new \DOMDocument("1.0", "UTF-8");
-        $dom_document->loadHTML("<html><body>$html_text</body></html>");
+        $dom_document->loadHTML(
+            "<?xml encoding=\"UTF-8\"><html><body>$html_text</body></html>"
+        );
 
         return $dom_document;
     }
