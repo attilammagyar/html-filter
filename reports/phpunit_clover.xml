@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1423866316">
-  <project timestamp="1423866316">
+<coverage generated="1423866346">
+  <project timestamp="1423866346">
     <package name="AthosHun\HTMLFilter">
       <file name="/home/travis/build/attilammagyar/html-filter/AthosHun/HTMLFilter/Configuration.php">
         <class name="Configuration" namespace="AthosHun\HTMLFilter">
