@@ -1,12 +1,12 @@
-PHPUnit 3.7.34 by Sebastian Bergmann.
+PHPUnit 3.7.38 by Sebastian Bergmann.
 
 Configuration read from /home/travis/build/attilammagyar/html-filter/phpunit.xml
 
-................
+..................
 
-Time: 84 ms, Memory: 6.50Mb
+Time: 110 ms, Memory: 6.50Mb
 
-OK (16 tests, 28 assertions)
+OK (18 tests, 30 assertions)
 
 Generating code coverage report in Clover XML format ... done
 
@@ -14,10 +14,10 @@ Generating code coverage report in HTML format ... done
 
 
 Code Coverage Report 
-  2014-04-14 21:02:07
+  2015-02-13 22:13:11
 
  Summary: 
-  Classes: 100.00% (4/4)
-  Methods: 100.00% (46/46)
-  Lines:   100.00% (220/220)
+  Classes: 75.00% (3/4)
+  Methods: 97.96% (48/49)
+  Lines:   99.19% (245/247)
 
