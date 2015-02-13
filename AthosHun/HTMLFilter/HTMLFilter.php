@@ -16,9 +16,17 @@ class HTMLFilter
 
     public function filter(Configuration $config, $html_text)
     {
-        $this->initialize($config, $html_text);
-        $this->copyAllowedNodes();
-        $filtered_html = $this->fetchFilteredHTML();
+        $this->libxml_used_internal_errors = libxml_use_internal_errors(true);
+
+        try {
+            $this->initialize($config, $html_text);
+            $this->copyAllowedNodes();
+            $filtered_html = $this->fetchFilteredHTML();
+        } catch (\Exception $error) {
+            $this->cleanup();
+            throw $error;
+        }
+
         $this->cleanup();
 
         return $filtered_html;
@@ -26,7 +34,6 @@ class HTMLFilter
 
     private function initialize(Configuration $config, $html_text)
     {
-        $this->libxml_used_internal_errors = libxml_use_internal_errors(true);
         $this->config = $config;
         $html_text = mb_convert_encoding($html_text, "UTF-8", "UTF-8");
         $this->original_dom = $this->createDOMDocument($html_text);
