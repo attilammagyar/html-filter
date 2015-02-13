@@ -2,6 +2,7 @@
 
 namespace AthosHun\HTMLFilter;
 
+
 class HTMLFilter
 {
     private $config;
@@ -27,6 +28,7 @@ class HTMLFilter
     {
         $this->libxml_used_internal_errors = libxml_use_internal_errors(true);
         $this->config = $config;
+        $html_text = mb_convert_encoding($html_text, "UTF-8", "UTF-8");
         $this->original_dom = $this->createDOMDocument($html_text);
         $this->filtered_dom = $this->createDOMDocument("");
     }

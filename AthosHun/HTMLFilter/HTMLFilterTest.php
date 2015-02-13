@@ -6,11 +6,24 @@ class HTMLFilterTest extends \PHPUnit_Framework_TestCase
 {
     private $filter;
     private $filter_config;
+    private $mb_substitute_character;
 
     public function setUp()
     {
         $this->filter_config = new Configuration();
         $this->filter = new HTMLFilter();
+        $this->mbstring_substitute_character = ini_get(
+            "mbstring.substitute_character"
+        );
+        ini_set("mbstring.substitute_character", "none");
+    }
+
+    public function tearDown()
+    {
+        ini_set(
+            "mbstring.substitute_character",
+            $this->mbstring_substitute_character
+        );
     }
 
     public function testPlainTextWithoutAnyHtmlRemainsUnchanged()
@@ -118,6 +131,16 @@ class HTMLFilterTest extends \PHPUnit_Framework_TestCase
         $this->assertFilteredHTML(
             "$zh$jp$ko",
             "<p>$zh</p><p>$jp</p><p>$ko</p>"
+        );
+    }
+
+    public function testIgnoresInvalidUtf8()
+    {
+        $this->filter_config->allowTag("p");
+
+        $this->assertFilteredHTML(
+            "prefix <p> onclick=alert(42)&gt;infix\n\nsuffix</p>",
+            "prefix <p\xe6> onclick=alert(42)>infix\xe6\xff\n\nsuffix"
         );
     }
 }
